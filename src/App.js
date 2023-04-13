@@ -13,7 +13,7 @@ import MyNetwork from './components/mynetwork/MyNetwork';
 function App(props) { 
   useEffect(() => {
     props.getUserAuth();
-  },);
+  },[]);
 
   return (
     <div className="App">

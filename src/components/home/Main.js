@@ -8,10 +8,11 @@ import ReactPlayer from 'react-player';
 
 const Main = (props) => {
   const [showModel, setShowModel] = useState("close");
+  const [likes, setLike] = useState(0);
 
   useEffect(() => {
     props.getArticles();
-  },);
+  },[]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -120,15 +121,15 @@ const Main = (props) => {
                 src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f" 
                 alt="" />
 
-                <span>75</span>
+                <span>{likes}</span>
               </button>
             </li>
             <li>
-              <a href="/home">2 comments</a>
+              <a href="/home">0 comments</a>
             </li>
           </SocialCounts>
           <SocialActions>
-          <button >
+          <button onClick={()=> setLike(likes+1)} >
             <img src="/images/like-icon.svg" alt="" />
             <span>Like</span>
           </button>
@@ -330,9 +331,14 @@ const SocialCounts = styled.ul`
     
     button{
       display: flex;
+      border: none;
+      background-color: white;
     }
     a{
       text-decoration: none;
+      padding-left: 20px;
+      color: black;
+      font-size: 13px;
     }
   }
 `;
@@ -340,7 +346,7 @@ const SocialCounts = styled.ul`
 const SocialActions = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin: 0;
   min-height: 40px;
   padding: 4px 8px;
@@ -348,10 +354,13 @@ const SocialActions = styled.div`
   button{
     display: inline-flex;
     align-items: center;
+    background-color: white;
+    border: none;
     padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
     color: #0a66c2;
+    & : hover{
+      cursor: pointer;
+    }
     
 
     @media(min-width: 768px){

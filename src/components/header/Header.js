@@ -172,7 +172,7 @@ const NavlistWrap = styled.ul`
     flex-wrap: nowrap;
     list-style-type: none;
 
-    .active{
+    /* .active{
         span:after{
             content: "";
             transform: scaleX(1);
@@ -185,7 +185,7 @@ const NavlistWrap = styled.ul`
             border-color: rgba(0, 0, 0, 0.9);
             
         }
-    }
+    } */
 `;
 
 const NavList = styled.li`
