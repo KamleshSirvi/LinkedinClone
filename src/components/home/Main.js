@@ -102,7 +102,7 @@ const Main = (props) => {
             {article.description}
           </Descryption>
           <SharedImg>
-            <a href="/home">
+            <a href="/">
               {!article.sharedImg && article.video ? (
                 <ReactPlayer width={"100%"} url={article.video} />
               ) : (
@@ -358,7 +358,7 @@ const SocialActions = styled.div`
     border: none;
     padding: 8px;
     color: #0a66c2;
-    & : hover{
+    & > hover{
       cursor: pointer;
     }
     
